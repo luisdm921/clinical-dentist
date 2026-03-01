@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════════════════════
+   PERSONALIZAR: Variables CSS globales del consultorio
+   ══════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    --font-sans: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply text-neutral-700 bg-white;
+  }
+
+  ::selection {
+    @apply bg-primary-100 text-primary-900;
+  }
+}
+
+@layer components {
+  /* ── Botón primario (CTA principal) ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-primary-600 text-white font-semibold
+           px-7 py-3.5 rounded-full
+           shadow-lg shadow-primary-600/25
+           transition-all duration-300
+           hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/30
+           hover:-translate-y-0.5 hover:scale-[1.02]
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2;
+  }
+
+  /* ── Botón secundario / outline ── */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-white text-primary-700 font-semibold
+           px-7 py-3.5 rounded-full
+           border-2 border-primary-200
+           transition-all duration-300
+           hover:bg-primary-50 hover:border-primary-400
+           hover:-translate-y-0.5
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2;
+  }
+
+  /* ── Tarjeta glass ── */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/60
+           rounded-2xl shadow-lg shadow-black/5;
+  }
+
+  /* ── Etiqueta / badge ── */
+  .badge {
+    @apply inline-flex items-center gap-1.5
+           bg-primary-50 text-primary-700 font-medium text-sm
+           px-4 py-1.5 rounded-full border border-primary-100;
+  }
+
+  /* ── Sección padding consistente ── */
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  /* ── Input de formulario ── */
+  .form-input {
+    @apply w-full px-4 py-3.5 rounded-xl
+           bg-neutral-50 border border-neutral-200
+           text-neutral-800 placeholder-neutral-400
+           transition-all duration-200
+           focus:border-primary-400 focus:bg-white focus:ring-2 focus:ring-primary-100
+           outline-none;
+  }
+}
+
+@layer utilities {
+  /* Gradient para textos destacados */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-500
+           bg-clip-text text-transparent;
+  }
+
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-accent-500 via-primary-500 to-secondary-500
+           bg-clip-text text-transparent;
+  }
+}
+
+/* ── Scrollbar sutil ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
