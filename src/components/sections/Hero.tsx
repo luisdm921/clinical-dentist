@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import {
   FaCalendarCheck,
-  FaPlay,
-  FaTimes,
   FaShieldAlt,
   FaClock,
   FaStar,
@@ -25,7 +23,6 @@ const CTA_URL = "https://pawsandbytes.setmore.com/luis?lang=es";
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
@@ -106,15 +103,6 @@ const Hero = () => {
               <FaCalendarCheck />
               Agendar Cita — Es Gratis
             </a>
-            <button
-              onClick={() => setShowVideo(true)}
-              className="btn-secondary !bg-white/10 !border-white/20 !text-white hover:!bg-white/20"
-            >
-              <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
-                <FaPlay className="text-xs ml-0.5" />
-              </span>
-              Conoce la Clínica
-            </button>
           </div>
 
           {/* Stats */}
@@ -153,33 +141,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* ── PERSONALIZAR: Video modal (reemplaza la URL del video) ── */}
-      {showVideo && (
-        <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={() => setShowVideo(false)}
-        >
-          <button
-            className="absolute top-6 right-6 text-white text-3xl hover:text-primary-300 transition-colors bg-white/10 rounded-full p-3"
-            onClick={() => setShowVideo(false)}
-          >
-            <FaTimes />
-          </button>
-          <div
-            className="w-full max-w-4xl aspect-video"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* PERSONALIZAR: Reemplaza con tu video de YouTube o archivo local */}
-            <iframe
-              className="w-full h-full rounded-2xl"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Conoce nuestra clínica dental"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
+
     </section>
   );
 };

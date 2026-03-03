@@ -35,7 +35,7 @@ const Navbar = () => {
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           scrolled
             ? "bg-white/95 backdrop-blur-lg shadow-lg shadow-black/5 py-3"
-            : "bg-transparent py-5"
+            : "bg-primary-900/80 backdrop-blur-md lg:bg-transparent py-5"
         }`}
       >
         <div className="container mx-auto px-4 lg:px-8">
@@ -125,7 +125,7 @@ const Navbar = () => {
 
       {/* Mobile menu overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-primary-900/98 backdrop-blur-lg z-[55]">
+        <div className="lg:hidden fixed inset-0 bg-primary-950 z-[55]">
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-5 right-5 text-white/80 hover:text-white text-2xl bg-white/10 rounded-full p-2"
